@@ -38,7 +38,7 @@ export const GameAlerts = ({ gridGame, startNextLevel, restartGridTest, clearAle
                         <div>
                             <h1>Start Grid Game</h1>
                             <h3>Instructions:</h3>
-                            <p>A pattern of colors will show on the grid. Memorize the pattern, then use the color selector <span className='screen-lg'>on the right</span> or (small screens) <span className='screen-sm'>down below</span> to fill as many sqaures as you can.</p>
+                            <p>A pattern of colors will show on the grid. Memorize the pattern, then use the color selector <span className='lg-screen-txt'>(on the right)</span> <span className='sm-screen-txt'>(down below)</span> to fill as many sqaures as you can.</p>
 
                             <h3>Level 1:<br />Need {gridGame.minPassingScore} to pass</h3>
 

@@ -46,7 +46,6 @@ export const getGames = (sortByTitle = 'Recent') => async dispatch => {
                 payload: sortedGameHistory
             })
 
-            //ineffecient
             dispatch(editSortByTitle)
         }
     } catch (err) {

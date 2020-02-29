@@ -1,9 +1,9 @@
 import React, { Fragment } from 'react'
 import { connect } from 'react-redux'
-import GameAlerts from './grid-game/GameAlerts'
-import ColorSelector from './grid-game/ColorSelector'
-import GridGameButtons from './grid-game/GridGameButtons'
-import Cells from './grid-game/Cells'
+import GameAlerts from './GameAlerts'
+import ColorSelector from './ColorSelector'
+import GridGameButtons from './GridGameButtons'
+import Cells from './Cells'
 
 const GridGame = ({ gridGame }) => {
     return (

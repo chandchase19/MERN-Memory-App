@@ -61,14 +61,6 @@ input:focus, textarea:focus {
   outline: none;
 }
 
-#loading {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-left: 50%;
-  margin-right: 50%;
-}
-
 /* Navbar: top nav and dropdown*/
 
 .navbar {
@@ -508,7 +500,19 @@ input:focus, textarea:focus {
   padding-top: 100%;
 }
 
+.sm-screen-txt {
+  display: none;
+}
+
 @media only screen and (max-width: 600px) {
+  .sm-screen-txt {
+    display: inline;
+  }
+
+  .lg-screen-txt {
+    display: none;
+  }
+
   #game-wrapper2 {
     grid-template-columns: 1fr;
     width: 95vw;

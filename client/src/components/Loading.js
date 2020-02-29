@@ -15,21 +15,21 @@ const Loading = () => {
 
     return (
         <div id='loading'>
-
-            <p style={{fontSize: '1.5em'}}>{(() => {
-                switch (count % 3) {
-                    case 0: {
-                        return <FontAwesomeIcon icon={faAlignLeft}/>
-                    } 
-                    case 1: {
-                        return <FontAwesomeIcon icon={faAlignCenter}/>
+            <p>
+                {(() => {
+                    switch (count % 3) {
+                        case 0: {
+                            return <p>Loading.</p>
+                        } 
+                        case 1: {
+                            return <p>Loading..</p>
+                        }
+                        case 2: {
+                            return <p>Loading...</p>
+                        }
                     }
-                    case 2: {
-                        return <FontAwesomeIcon icon={faAlignRight}/>
-                    }
-                }
-            })()} Loading</p>
-
+                })()}
+            </p>
         </div>
     )
 }

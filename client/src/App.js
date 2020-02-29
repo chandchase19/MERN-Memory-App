@@ -8,9 +8,9 @@ import Home from './components/Home'
 import Navbar from './components/Navbar'
 import Login from './components/Login'
 import Register from './components/Register'
-import DisplayGames from './components/DisplayGames'
-import GridGame from './components/games/GridGame'
-import History from './components/History'
+import ShowGames from './components/games/ShowGames'
+import GridGame from './components/games/grid-game'
+import History from './components/games/game-history/History'
 
 function App() {
   return (
@@ -23,7 +23,7 @@ function App() {
 
               <Route exact path="/" component={Home}/>
               <Route exact path="/myProfile" component={History}/>
-              <Route exact path="/games" component={DisplayGames}/>
+              <Route exact path="/games" component={ShowGames}/>
               <Route exact path="/login" component={Login}/>
               <Route exact path="/register" component={Register}/>
               <Route exact path='/games/grid-game' component={GridGame}/>
