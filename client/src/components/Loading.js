@@ -10,7 +10,7 @@ const Loading = () => {
     useEffect(() => {
         const interval = setInterval(() => {
             setCount(count => count + 1)
-        }, 275)   
+        }, 400)   
     }, [])
 
     return (

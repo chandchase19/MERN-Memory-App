@@ -10,11 +10,9 @@ let guestName
 let loginStatusMsg
 
 if (isLoggedIn) {
-  guestName = 'user'
-  loginStatusMsg = 'logged in'
+  loginStatusMsg = 'You are logged in.'
 } else {
-  guestName = 'guest'
-  loginStatusMsg = 'not logged in'
+  loginStatusMsg = 'You are not logged in.'
 }
 
 const Home = ({ logout }) => {
@@ -22,7 +20,7 @@ const Home = ({ logout }) => {
     <div id='home'>
       <h1>Test your memory</h1>
 
-        <p>Welcome {guestName}! You are {loginStatusMsg}</p>
+        <p>{loginStatusMsg}</p>
 
         { isLoggedIn ?
           <p>You can now <Link to="/games">select a game</Link> or <Link to="/myProfile">view past scores</Link>.</p>
@@ -30,7 +28,7 @@ const Home = ({ logout }) => {
           <p><Link to="/login">Sign in</Link> or <Link to="/register">Create account</Link> to save your scores.</p>
         }
 
-        <Link to='/games' className='play-btn'>Play</Link>
+        <Link to='/games' className='play-btn'>Go to Games</Link>
     </div>
   )
 }

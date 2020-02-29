@@ -11,7 +11,7 @@ body {
   margin: 0;
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4 {
   font-weight: 400;
 }
 
@@ -26,6 +26,11 @@ h2 {
 
 h3 {
   font-size: 2rem;
+  margin: 2px 0;
+}
+
+h3 {
+  font-size: 1.5rem;
   margin: 2px 0;
 }
 
@@ -60,6 +65,10 @@ input {
 input:focus, textarea:focus {
   outline: none;
 }
+
+#home .play-btn, #display-games .play-btn, #profile .play-btn {
+  margin: 15px auto;
+} 
 
 /* Navbar: top nav and dropdown*/
 
@@ -242,6 +251,10 @@ input:focus, textarea:focus {
   margin: 10px 0;
 }
 
+#display-games > div .play-btn {
+  margin: 10px auto;
+}
+
 /* GameHistory: */
 
 #profile {
@@ -276,9 +289,13 @@ input:focus, textarea:focus {
   background-color: black;
 }
 
-/* #show-sort-opts button {
-  display: inline;
-} */
+#no-games, #no-games > a{
+  font-size: 2rem;
+}
+
+#no-games {
+  margin: 0 0 18px 0;
+}
 
 #hide-sort-opts button {
   display: none;

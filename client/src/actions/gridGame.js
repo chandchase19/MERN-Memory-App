@@ -18,7 +18,8 @@ import {
     RESET_COUNT_DOWN,
     TOGGLE_ALERT_IS_FADING,
     REMOVE_ALERT,
-    SET_MIN_PASSING_SCORE
+    SET_MIN_PASSING_SCORE,
+    ADD_GUEST_GAME
 } from './types'
 import axios from 'axios'
 
@@ -167,6 +168,8 @@ export const gridCountdown = (numStart) => dispatch => {
 }
 
 export const gradeInput = (selectedCells, answearKey, currentLevel) => async dispatch => {
+
+    const userId = localStorage.getItem('auth-id')
     
     let score = 0
     const clearGridArr = []
@@ -189,7 +192,7 @@ export const gradeInput = (selectedCells, answearKey, currentLevel) => async dis
 
     //gameover
     if (score < minPassingScore) {
-        if (localStorage.getItem('auth-id')) {
+        if (userId) {
             const config = {
                 headers: {
                     'Content-Type': 'application/json'
@@ -200,19 +203,30 @@ export const gradeInput = (selectedCells, answearKey, currentLevel) => async dis
                 title: 'Grid Game',
                 score: currentLevel,
                 date: Date.now(),
-                userId: localStorage.getItem('auth-id')
+                userId
             }
             
             const res = await axios.post('/api/games', payload, config)
             
         } else {
-            console.log('not signed in')
+            const payload = {
+                title: 'Grid Game',
+                score: currentLevel,
+                date: Date.now()
+            }
+
+            dispatch({
+                type: ADD_GUEST_GAME,
+                payload
+            })
         }
 
         dispatch({
             type: SET_MIN_PASSING_SCORE,
             payload: getMinPassingScore(currentLevel, Math.round(answearKey.length/2))
         })
+
+        
     
         dispatch({
             type: SET_GAME_ALERT,
@@ -241,7 +255,6 @@ export const gradeInput = (selectedCells, answearKey, currentLevel) => async dis
             payload: 'betweenlevels'
         })
     }
-    
 }
 
 export const toggleAlertIsFading = () => dispatch => {

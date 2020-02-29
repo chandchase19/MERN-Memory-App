@@ -6,9 +6,11 @@ export const ADD_LOGIN_ERROR = 'ADD_LOGIN_ERROR'
 export const CLEAR_LOGIN_ERRORS = 'CLEAR_LOGIN_ERRORS'
 export const CLEAR_REGISTER_ERRORS = 'CLEAR_REGISTER_ERRORS'
 
-// profile
+// profile/history
 export const CLEAR_PROFILE = 'CLEAR_PROFILE'
 export const GET_GAMES = 'GET_GAMES'
+export const GET_GUEST_GAMES = 'GET_GUEST_GAMES'
+export const ADD_GUEST_GAME = 'ADD_GUEST_GAME'
 export const SORT_GAME_HISTORY = 'SORT_GAME_HISTORY'
 
 // grid game 

@@ -1,7 +1,9 @@
 import {
     GET_GAMES,
+    GET_GUEST_GAMES,
     SORT_GAME_HISTORY,
-    CLEAR_PROFILE
+    CLEAR_PROFILE,
+    ADD_GUEST_GAME
 } from '../actions/types'
 
 const initialState = {
@@ -24,7 +26,13 @@ export default function(state = initialState, action) {
         case GET_GUEST_GAMES:
             return {
                 ...state,
-                guestGames: payload,
+                guestGames: [...state.guestGames, payload],
+                loading: false
+            }
+        case ADD_GUEST_GAME:
+            return {
+                ...state,
+                guestGames: [...state.guestGames, payload],
                 loading: false
             }
         case SORT_GAME_HISTORY:

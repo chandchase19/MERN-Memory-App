@@ -1,12 +1,13 @@
 import axios from 'axios'
 import {
     GET_GAMES,
+    GET_GUEST_GAMES,
+    ADD_GUEST_GAME,
     SORT_GAME_HISTORY
 } from './types'
 
-export const getGames = (sortByTitle = 'Recent') => async dispatch => {
+export const getGames = (guestGames = [], sortByTitle = 'Recent') => async dispatch => {
     const userId = localStorage.getItem('auth-id')
-    if(!userId) return null
    
     const config = {
         headers: {
@@ -18,7 +19,11 @@ export const getGames = (sortByTitle = 'Recent') => async dispatch => {
 
     try {
         const res = await axios.post('/api/games/all', body, config)
-        const fullGameHistory = Array.from(res.data)
+        let fullGameHistory = Array.from(res.data)
+
+        if (!fullGameHistory && !userId) {
+            fullGameHistory = guestGames
+        }
 
         if (sortByTitle === 'Recent') {
             dispatch({
