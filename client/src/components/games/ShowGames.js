@@ -14,7 +14,7 @@ const Games = ({ clearGridGame }) => {
 
                 <p>Redraw the pattern with the correct colors to score points. Redraw the pattern with the correct colors.</p>
 
-                <Link to='/games/grid-game' className='play-btn' onClick={() => clearGridGame()}>Play</Link>
+                <div><Link to='/games/grid-game' className='play-btn' onClick={() => clearGridGame()}>Play</Link></div>
             </div>
         </div>
     )
