@@ -68,7 +68,24 @@ input:focus, textarea:focus {
 
 #home .play-btn, #display-games .play-btn, #profile .play-btn {
   margin: 15px auto;
-} 
+}
+
+.txt-xs-screen {
+  display: none;
+}
+
+.txt-md-screen {
+  display: inline;
+}
+
+@media screen and (max-width: 550px) {
+  span.txt-xs-screen {
+    display: inline;
+  }  
+  span.txt-md-screen {
+    display: none
+  }
+}
 
 /* Navbar: top nav and dropdown*/
 
@@ -118,6 +135,7 @@ input:focus, textarea:focus {
 
 
 @media screen and (max-width: 550px) {
+
   .navbar {
     flex-direction: row-reverse;
   }
@@ -211,8 +229,8 @@ input:focus, textarea:focus {
   border-radius: 3px;
   margin: 12px auto;
   padding: 1px 20px;
-  max-width: 98%;
   width: fit-content;
+  max-width: 98%;
   display: block;
 }
 
@@ -259,6 +277,8 @@ input:focus, textarea:focus {
 
 #profile {
   text-align: center;
+  max-width: 600px;
+  margin: auto;
 }
 
 #profile h1{

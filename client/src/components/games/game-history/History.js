@@ -9,7 +9,7 @@ import UserHistory from './UserHistory'
 import GuestGames from './GuestGames'
 
 
-const MyProfile = ({ profile, getGames }) => {
+const MyProfile = ({ getGames }) => {
     useEffect(() => {
         getGames()
     }, [])

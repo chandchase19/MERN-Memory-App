@@ -9,14 +9,14 @@ import HistoryNav from './HistoryNav'
 
 const GuestGames = ({profile, getGames}) => {
 
-    let showHistoryNav = true
-    let showNoGamesAlert = true
+    let showHistoryNav = false
+    let showNoGamesAlert = false
 
-    if (!profile.guestGames.length) {
-        showHistoryNav = false
-        
-        if (profile.loading) {
-            showNoGamesAlert = false
+    if (!profile.loading) {
+        if (profile.guestGames.length > 0) {
+            showHistoryNav = true
+        } else {
+            showNoGamesAlert = true
         }
     }
 
@@ -41,7 +41,7 @@ const GuestGames = ({profile, getGames}) => {
                     <div>
                         <p id='no-games'>No guest games played. <Link to="/login">Sign in </Link>or <Link to="/register">Create account </Link>to save your scores.</p>
 
-                        <Link to='/games' className='play-btn'>Go to games</Link>
+                        <Link to='/games' className='play-btn'><span className='txt-xs-screen'>Play</span><span className='txt-md-screen'>Go to games</span></Link>
                     </div>
                 }
         </div>

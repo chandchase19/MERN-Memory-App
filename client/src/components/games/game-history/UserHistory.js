@@ -7,16 +7,18 @@ import HistoryNav from './HistoryNav'
 
 const UserHistory = ({ profile }) => {
 
-    let showHistoryNav = true
-    let showNoGamesAlert = true
+    let showHistoryNav = false
+    let showNoGamesAlert = false
 
-    if (!profile.allGames.length) {
-        showHistoryNav = false
-        
-        if (profile.loading) {
-            showNoGamesAlert = false
+    if (!profile.loading) {
+        if (profile.allGames.length > 0) {
+            showHistoryNav = true
+        } else {
+            showNoGamesAlert = true
         }
     }
+
+    console.log(profile.loading, profile.allGames.length)
 
     return (
         <div id='profile'>

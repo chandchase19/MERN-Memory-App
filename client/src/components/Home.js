@@ -6,13 +6,15 @@ import { logout } from '../actions/auth'
 const isLoggedIn = localStorage.getItem('auth-id')
 
 //change to real username
-let guestName
+let gamesLinkMsg
 let loginStatusMsg
 
 if (isLoggedIn) {
   loginStatusMsg = 'You are logged in.'
+  gamesLinkMsg = 'Continue as guest '
 } else {
   loginStatusMsg = 'You are not logged in.'
+  gamesLinkMsg = 'Play'
 }
 
 const Home = ({ logout }) => {
@@ -28,7 +30,7 @@ const Home = ({ logout }) => {
           <p><Link to="/login">Sign in</Link> or <Link to="/register">Create account</Link> to save your scores.</p>
         }
 
-        <Link to='/games' className='play-btn'>Go to Games</Link>
+        <Link to='/games' className='play-btn'><span className='txt-xs-screen'>{gamesLinkMsg}</span><span className='txt-md-screen'>Play</span></Link>
     </div>
   )
 }
