@@ -8,9 +8,9 @@ import Navbar from './components/Navbar'
 import Home from './components/pages/Home'
 import Register from './components/pages/Register'
 import Login from './components/pages/Login'
-import ShowGames from './components/games/ShowGames'
-import GridGame from './components/games/grid-game'
-import History from './components/games/game-history'
+import ShowGames from './components/game-pages/ShowGames'
+import GridGame from './components/game-pages/grid-game'
+import History from './components/game-pages/game-history'
 
 function App() {
   return (
