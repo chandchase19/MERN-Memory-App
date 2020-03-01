@@ -11,10 +11,10 @@ let loginStatusMsg
 
 if (isLoggedIn) {
   loginStatusMsg = 'You are logged in.'
-  gamesLinkMsg = 'Continue as guest '
+  gamesLinkMsg = 'Play'
 } else {
   loginStatusMsg = 'You are not logged in.'
-  gamesLinkMsg = 'Play'
+  gamesLinkMsg = 'Continue as guest '
 }
 
 const Home = ({ logout }) => {
@@ -30,7 +30,7 @@ const Home = ({ logout }) => {
           <p><Link to="/login">Sign in</Link> or <Link to="/register">Create account</Link> to save your scores.</p>
         }
 
-        <Link to='/games' className='play-btn'><span className='txt-xs-screen'>{gamesLinkMsg}</span><span className='txt-md-screen'>Play</span></Link>
+        <Link to='/games' className='play-btn'><span className='txt-md-screen'>{gamesLinkMsg}</span><span className='txt-xs-screen'>Play</span></Link>
     </div>
   )
 }

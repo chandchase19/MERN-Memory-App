@@ -217,15 +217,6 @@ input:focus, textarea:focus {
   width: 100%;
 }
 
-/* .auth-form input {
-  text-indent: 3px;
-  border-radius: 3px;
-  font-size: 2rem;
-  margin-bottom: 5px;
-  width: 100%;
-} */
-
-
 .auth-form input[type=submit], .play-btn {
   font-size: 2.3rem;
   background-color: rgb(31, 28, 218);
