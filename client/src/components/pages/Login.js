@@ -1,7 +1,7 @@
 import React, {Fragment, useState} from 'react'
 import { Link, Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
-import { login, clearAuthErrors } from '../actions/auth'
+import { login, clearAuthErrors } from '../../actions/auth'
 
 const Login = ({ auth, login }) => {
     const [formData, setFormData] = useState({

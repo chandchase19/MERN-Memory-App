@@ -4,13 +4,13 @@ import './App.css';
 import { Provider } from 'react-redux'
 import store from './store'
 
-import Home from './components/Home'
 import Navbar from './components/Navbar'
-import Login from './components/Login'
-import Register from './components/Register'
+import Home from './components/pages/Home'
+import Register from './components/pages/Register'
+import Login from './components/pages/Login'
 import ShowGames from './components/games/ShowGames'
 import GridGame from './components/games/grid-game'
-import History from './components/games/game-history/History'
+import History from './components/games/game-history'
 
 function App() {
   return (

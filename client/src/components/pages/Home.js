@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
-import { logout } from '../actions/auth'
+import { logout } from '../../actions/auth'
 
 const isLoggedIn = localStorage.getItem('auth-id')
 
