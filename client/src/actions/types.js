@@ -5,6 +5,7 @@ export const ADD_REGISTER_ERROR = 'ADD_REGISTER_ERROR'
 export const ADD_LOGIN_ERROR = 'ADD_LOGIN_ERROR'
 export const CLEAR_LOGIN_ERRORS = 'CLEAR_LOGIN_ERRORS'
 export const CLEAR_REGISTER_ERRORS = 'CLEAR_REGISTER_ERRORS'
+export const VERIFY_ID = 'VERIFY_ID'
 
 // profile/history
 export const CLEAR_PROFILE = 'CLEAR_PROFILE'

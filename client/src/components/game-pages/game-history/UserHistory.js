@@ -6,7 +6,6 @@ import Loading from '../../Loading'
 import HistoryNav from './HistoryNav'
 
 const UserHistory = ({ profile }) => {
-
     let showHistoryNav = false
     let showNoGamesAlert = false
 
@@ -17,8 +16,6 @@ const UserHistory = ({ profile }) => {
             showNoGamesAlert = true
         }
     }
-
-    console.log(profile.loading, profile.allGames.length)
 
     return (
         <div id='game-history-wrapper'>

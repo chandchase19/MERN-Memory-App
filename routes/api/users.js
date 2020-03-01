@@ -27,7 +27,7 @@ router.post('/register', async (req, res) => {
 
         await user.save()
 
-        res.json({authId})
+        res.json({user})
 
     } catch (err) {
         console.error(err.message)
@@ -61,25 +61,23 @@ router.post('/login', async (req, res) => {
     }
 })
 
-router.post('/login', async (req, res) => {
-    const { email, password }  = req.body
+
+router.post('/verify-id', async (req, res) => {
+    const { authId }  = req.body
 
     try {
+        console.log(authId)
+        
+        let user = await User.findOne({ authId })
 
-        let user = await User.findOne({ email })
+        console.log(user)
+
+        res.json({idIsValid: true})
 
         if (!user) {
-            res.status(400).json({ errors: ['Username or password is incorrect']})    
+            res.status(400).json({ idIsValid: false})    
         }
-
-        if (password !== user.password) {
-            res.status(400).json({ errors: ['Username or password is incorrect']})            
-        }
-
-        res.json({authId: user.authId})
-
     } catch (err) {
- 
         console.error(err.message)
         res.status(500).send('server error')
         

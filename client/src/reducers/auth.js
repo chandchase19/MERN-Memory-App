@@ -4,11 +4,12 @@ import {
     ADD_LOGIN_ERROR,
     ADD_REGISTER_ERROR,
     CLEAR_LOGIN_ERRORS,
-    CLEAR_REGISTER_ERRORS
+    CLEAR_REGISTER_ERRORS,
+    VERIFY_ID,
 } from '../actions/types'
 
 const intitalState = {
-    loggedIn: false,
+    isLoggedIn: false,
     authErrors: [],
     registerErrors: [],
     loginErrors: [],
@@ -52,6 +53,11 @@ export default function(state = intitalState, action) {
             return {
                 ...state,
                 registerErrors: []
+            }
+        case VERIFY_ID:
+            return {
+                ...state,
+                isLoggedIn: payload
             }
         default:
             return state

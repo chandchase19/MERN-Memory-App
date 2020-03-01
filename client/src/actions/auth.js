@@ -7,11 +7,11 @@ import {
     ADD_LOGIN_ERROR,
     ADD_REGISTER_ERROR,
     CLEAR_REGISTER_ERRORS,
-    CLEAR_LOGIN_ERRORS
+    CLEAR_LOGIN_ERRORS,
+    VERIFY_ID
 } from './types'
 
 export const login = (email, password) => async dispatch => {
-
     const config = {
         headers: {
             'Content-Type': 'application/json'
@@ -37,6 +37,39 @@ export const login = (email, password) => async dispatch => {
         dispatch(addAuthErrors('login', err.response.data.errors))
         console.log('dipsatching ADD error..', err.response.data.errors)
         console.log('login error')
+    }
+}
+
+export const verifyId = (authId) => async dispatch => {
+    const config = {
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    }
+
+    const body = JSON.stringify({authId})
+
+    try {
+        console.log(authId)
+
+        console.log(body)
+
+        const res = await axios.post('/api/users/verify-id', body, config)
+
+        console.log(res.data)
+
+        dispatch({
+            type: VERIFY_ID,
+            payload: res.data.idIsValid
+        })
+        
+    } catch (err) {
+        console.log(err.response.data.idIsValid)
+
+        dispatch({
+            type: VERIFY_ID,
+            payload: err.response.data.idIsValid
+        })
     }
 }
 
