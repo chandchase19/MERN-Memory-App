@@ -21,7 +21,7 @@ const UserHistory = ({ profile }) => {
     console.log(profile.loading, profile.allGames.length)
 
     return (
-        <div id='profile'>
+        <div id='game-history-wrapper'>
             <h1>Game History</h1>
 
                 {showHistoryNav && <HistoryNav />}

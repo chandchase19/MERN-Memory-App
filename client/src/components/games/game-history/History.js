@@ -1,12 +1,8 @@
 import React, { useEffect, Fragment, useState } from 'react'
 import { connect } from 'react-redux'
-import { getGames } from '../../../actions/profile'
-import moment from 'moment'
-import { Redirect } from 'react-router-dom'
-import Loading from '../../Loading'
-
+import { getGames } from '../../../actions/game-history-wrapper'
 import UserHistory from './UserHistory'
-import GuestGames from './GuestGames'
+import GuestHistory from './GuestHistory'
 
 
 const MyProfile = ({ getGames }) => {
@@ -22,7 +18,7 @@ const MyProfile = ({ getGames }) => {
                 { isLoggedIn ?
                     <UserHistory />
                     :
-                    <GuestGames />
+                    <GuestHistory />
                 }
             </div>
         </div>

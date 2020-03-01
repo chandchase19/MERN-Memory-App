@@ -1,8 +1,6 @@
 import axios from 'axios'
 import {
     GET_GAMES,
-    GET_GUEST_GAMES,
-    ADD_GUEST_GAME,
     SORT_GAME_HISTORY
 } from './types'
 

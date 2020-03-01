@@ -270,14 +270,14 @@ input:focus, textarea:focus {
 
 /* GameHistory: */
 
-#profile {
+#game-history-wrapper {
   text-align: center;
   width: 90%;
   max-width: 900px;
   margin: auto;
 }
 
-#profile h1{
+#game-history-wrapper h1{
   margin: 15px 0;
 }
 

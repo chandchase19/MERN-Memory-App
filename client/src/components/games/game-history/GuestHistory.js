@@ -7,7 +7,7 @@ import Loading from '../../Loading'
 import HistoryNav from './HistoryNav'
 
 
-const GuestGames = ({profile, getGames}) => {
+const GuestHistory = ({profile, getGames}) => {
 
     let showHistoryNav = false
     let showNoGamesAlert = false
@@ -21,7 +21,7 @@ const GuestGames = ({profile, getGames}) => {
     }
 
     return (
-        <div id='profile'>
+        <div id='game-history-wrapper'>
             <h1>Guest Games</h1>
 
             {showHistoryNav && <HistoryNav />}
@@ -52,4 +52,4 @@ const mapStateToProps = state => ({
     profile: state.profile
 })
 
-export default connect(mapStateToProps, { getGames })(GuestGames)
+export default connect(mapStateToProps, { getGames })(GuestHistory)
