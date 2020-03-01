@@ -6,9 +6,11 @@ import {
     CLEAR_LOGIN_ERRORS,
     CLEAR_REGISTER_ERRORS,
     VERIFY_ID,
+    START_AUTH_LOADING
 } from '../actions/types'
 
 const intitalState = {
+    loading: true,
     isLoggedIn: false,
     authErrors: [],
     registerErrors: [],
@@ -26,13 +28,15 @@ export default function(state = intitalState, action) {
                 ...state,
                 ...payload,
                 authErrors: [],
-                loggedIn: true
+                loggedIn: true,
+                loading: false
             }
         case LOGOUT:
             return {
                 ...state,
                 loggedIn: false,
-                authId: null
+                authId: null,
+                loading: false
             }
         case ADD_LOGIN_ERROR:
             return {
@@ -54,10 +58,16 @@ export default function(state = intitalState, action) {
                 ...state,
                 registerErrors: []
             }
+        case START_AUTH_LOADING:
+            return {
+                ...state,
+                loading: true
+            }
         case VERIFY_ID:
             return {
                 ...state,
-                isLoggedIn: payload
+                isLoggedIn: payload,
+                loading: false,
             }
         default:
             return state

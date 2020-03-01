@@ -3,7 +3,9 @@ import {
     GET_GUEST_GAMES,
     SORT_GAME_HISTORY,
     CLEAR_PROFILE,
-    ADD_GUEST_GAME
+    ADD_GUEST_GAME,
+    CLEAR_GUEST_GAMES,
+    GET_GAMES_LOADING_STATUS
 } from '../actions/types'
 
 const initialState = {
@@ -43,6 +45,16 @@ export default function(state = initialState, action) {
         case CLEAR_PROFILE:
             return {
                 ...initialState
+            }
+        case CLEAR_GUEST_GAMES:
+            return {
+                ...state,
+                guestGames: []
+            }
+        case GET_GAMES_LOADING_STATUS:
+            return {
+                ...state,
+                loading: payload
             }
         default:
             return state

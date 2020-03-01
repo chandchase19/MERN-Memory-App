@@ -1,11 +1,16 @@
 import React, { useEffect, Fragment, useState } from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
+import { getGames } from '../../../actions/profile'
 import moment from 'moment'
 import Loading from '../../Loading'
 import HistoryNav from './HistoryNav'
 
-const UserHistory = ({ profile }) => {
+const UserHistory = ({ profile, getGames }) => {
+    useEffect(() => {
+        getGames(localStorage.getItem('auth-id'))
+    }, [])
+
     let showHistoryNav = false
     let showNoGamesAlert = false
 
@@ -19,7 +24,7 @@ const UserHistory = ({ profile }) => {
 
     return (
         <div id='game-history-wrapper'>
-            <h1>Game History</h1>
+            <h1>Saved History</h1>
 
                 {showHistoryNav && <HistoryNav />}
                 {profile.loading && <Loading />}
@@ -40,7 +45,6 @@ const UserHistory = ({ profile }) => {
                         <Link to='/games' className='play-btn'>Play</Link>
                     </div>
                 }
-
         </div>
     )
 }
@@ -49,4 +53,4 @@ const mapStateToProps = state => ({
     profile: state.profile
 })
 
-export default connect(mapStateToProps, { })(UserHistory)
+export default connect(mapStateToProps, { getGames })(UserHistory)

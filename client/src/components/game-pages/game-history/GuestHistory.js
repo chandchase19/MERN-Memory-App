@@ -8,16 +8,13 @@ import HistoryNav from './HistoryNav'
 
 
 const GuestHistory = ({profile, getGames}) => {
-
     let showHistoryNav = false
     let showNoGamesAlert = false
 
-    if (!profile.loading) {
-        if (profile.guestGames.length > 0) {
-            showHistoryNav = true
-        } else {
-            showNoGamesAlert = true
-        }
+    if (profile.guestGames.length > 0) {
+        showHistoryNav = true
+    } else {
+        showNoGamesAlert = true
     }
 
     return (
@@ -25,7 +22,6 @@ const GuestHistory = ({profile, getGames}) => {
             <h1>Guest Games</h1>
 
             {showHistoryNav && <HistoryNav />}
-            {profile.loading && <Loading />}
 
                 <div id='game-history'>
                     {profile.guestGames && profile.guestGames.map(game => (

@@ -66,12 +66,12 @@ router.post('/verify-id', async (req, res) => {
     const { authId }  = req.body
 
     try {
-        console.log(authId)
+        console.log('hi', authId)
         
         let user = await User.findOne({ authId })
 
         console.log(user)
-
+        
         res.json({idIsValid: true})
 
         if (!user) {

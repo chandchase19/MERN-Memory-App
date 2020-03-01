@@ -1,30 +1,34 @@
 import React, { useEffect, Fragment, useState } from 'react'
 import { connect } from 'react-redux'
-import { getGames } from '../../../actions/profile'
 import { verifyId } from '../../../actions/auth'
 import UserHistory from './UserHistory'
 import GuestHistory from './GuestHistory'
+import Loading from '../../Loading'
+import profile from '../../../reducers/profile'
 
 
-const History = ({ getGames, verifyId, auth }) => {
+const History = ({ verifyId, auth }) => {
     useEffect(() => {
         verifyId(localStorage.getItem('auth-id'))
-        getGames()
     }, [])
-    
+
+    const userId = (localStorage.getItem('auth-id'))
+
     return (
-        <div id='profile'>
-            { auth.isLoggedIn ?
+        <div id ='profile'>
+            {userId ?
                 <UserHistory />
                 :
                 <GuestHistory />
             }
         </div>
     )
+        
 }
     
 const mapStateToProps = state => ({
-    auth: state.auth
+    auth: state.auth,
+    profile: state.profile
 })
 
-export default connect(mapStateToProps, { getGames, verifyId })(History)
+export default connect(mapStateToProps, { verifyId })(History)

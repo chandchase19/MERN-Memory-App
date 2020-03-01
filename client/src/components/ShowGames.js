@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
-import { clearGridGame } from '../../actions/gridGame';
+import { clearGridGame } from '../actions/gridGame';
 
 const Games = ({ clearGridGame }) => {
 

@@ -8,8 +8,10 @@ import {
     ADD_REGISTER_ERROR,
     CLEAR_REGISTER_ERRORS,
     CLEAR_LOGIN_ERRORS,
-    VERIFY_ID
+    VERIFY_ID,
+    START_AUTH_LOADING
 } from './types'
+import { clearGuestGames } from './profile'
 
 export const login = (email, password) => async dispatch => {
     const config = {
@@ -33,6 +35,8 @@ export const login = (email, password) => async dispatch => {
             payload: res.data
         })
 
+        dispatch(clearGuestGames())
+
     } catch (err) {
         dispatch(addAuthErrors('login', err.response.data.errors))
         console.log('dipsatching ADD error..', err.response.data.errors)
@@ -41,6 +45,13 @@ export const login = (email, password) => async dispatch => {
 }
 
 export const verifyId = (authId) => async dispatch => {
+    if (!authId) {
+        return dispatch({
+            type: VERIFY_ID,
+            payload: false
+        })
+    }
+
     const config = {
         headers: {
             'Content-Type': 'application/json'

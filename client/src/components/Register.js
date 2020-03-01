@@ -1,8 +1,8 @@
 import React, {useState} from 'react'
 import { connect } from 'react-redux'
 import { Link, Redirect } from 'react-router-dom'
-import { register } from '../../actions/auth'
-import { addAuthErrors, clearAuthErrors } from '../../actions/auth'
+import { register } from '../actions/auth'
+import { addAuthErrors, clearAuthErrors } from '../actions/auth'
 
 const Register = ({ auth, profile, register, addAuthErrors, clearAuthErrors }) => {
 
