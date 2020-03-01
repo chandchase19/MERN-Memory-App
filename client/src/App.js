@@ -8,7 +8,7 @@ import Navbar from './components/Navbar'
 import Home from './components/Home'
 import Register from './components/Register'
 import Login from './components/Login'
-import ShowGames from './components/ShowGames'
+import ShowGames from './components/game-pages/ShowGames'
 import GridGame from './components/game-pages/grid-game'
 import History from './components/game-pages/game-history'
 

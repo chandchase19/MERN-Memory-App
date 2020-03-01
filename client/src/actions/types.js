@@ -15,9 +15,7 @@ export const GET_GUEST_GAMES = 'GET_GUEST_GAMES'
 export const ADD_GUEST_GAME = 'ADD_GUEST_GAME'
 export const SORT_GAME_HISTORY = 'SORT_GAME_HISTORY'
 
-// grid game 
-// export const ADD_GUEST_GAME = 'ADD_GUEST_GAME'
-
+// grid game
 export const GET_GAMES_LOADING_STATUS = 'GET_GAMES_LOADING_STATUS'
 export const CLEAR_GUEST_GAMES = 'CLEAR_GUEST_GAMES'
 export const CLEAR_GAME_ALERTS = 'CLEAR_GAME_ALERTS'
